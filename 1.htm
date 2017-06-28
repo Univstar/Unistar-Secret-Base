@@ -1,0 +1,35 @@
+<html>
+<div id="block" style="position:absolute; top:0px; left:0px; width:150px; height:150px; background-color:red; color:yellow; font-size:30px"></div>
+
+<script>
+	function func() {
+		x += xf;
+		if (x + 150 > document.body.clientHeight) {
+			x = document.body.clientHeight - 150;
+			xf = -1;
+		}
+		if (x < 0) {
+			x = 0;
+			xf = 1;
+		}
+
+		y += yf;
+		if (y + 150 > document.body.clientWidth) {
+			y = document.body.clientWidth - 150;
+			yf = -1;
+		}
+		if (y < 0) {
+			y = 0;
+			yf = 1;
+		}
+
+		document.getElementById("block").style.top = x;
+		document.getElementById("block").style.left = y;
+	}
+
+	x = 0, y = 0;
+	xf = 1; yf = 1;
+	setInterval(func, 10);
+</script>
+
+</html>
